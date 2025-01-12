@@ -1,0 +1,13 @@
+.button-container{
+    height: 40px;
+    width: 90px;
+    background-color: lightblue;
+    border-radius: 15px;
+    border: none;
+    margin-bottom: 20px;
+    font-size:26px;
+    font-weight: 700;
+}
+.button-container:hover{
+    background-color: rgb(150, 191, 204);
+}

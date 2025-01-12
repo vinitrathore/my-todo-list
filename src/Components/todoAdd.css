@@ -1,0 +1,69 @@
+.todo-add-container {
+    width: 100%;
+    background-color: rgb(240, 209, 153);
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+    padding: 10px;
+  }
+  
+  .todo-btn {
+    border: none;
+    width: 98%;
+    background-color: lightblue;
+    border: 3px solid blue;
+    font-weight: 700;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 10px;
+    align-self: center;
+  }
+  
+  .todo-input-title,
+  .todo-input-subtitle {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    font-size: 16px;
+  }
+  
+  .date-container {
+    display: flex;
+   /* background-color: blue; */
+    margin-top: 10px;
+    /* align-self:baseline; */
+    align-items: center;
+    justify-content: center;
+    /* flex-direction: column; */
+    align-self:safe;
+
+   
+  }
+  
+  .todo-start-time,
+  .todo-end-time {
+    flex: 1;
+    /* margin: 0 10px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin: 0 15px; */
+    flex-direction: column;
+  }
+  
+  /* h3{margin-right: 25px;} */
+  .todo-start-time input,
+  .todo-end-time input {
+    width: 100%;
+    margin-top: 5px;
+  }
+  .todo-start-time, .todo-end-time {
+    margin: 10px 0;
+  }
+  
+  input[type="date"], input[type="time"] {
+    padding: 5px;
+    margin: 5px 0;
+    font-size: 16px;
+  }
+  
