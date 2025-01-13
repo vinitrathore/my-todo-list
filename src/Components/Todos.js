@@ -5,9 +5,15 @@ import TodoContext from "../utils/TodoContext";
 function Todos() {
   const [todoGstate, setTodoGstate] = useContext(TodoContext);
 
+  // Update localStorage directly
+  const updateLocalStorage = (updatedTodos) => {
+    setTodoGstate(updatedTodos); // Update state
+    localStorage.setItem("todos", JSON.stringify(updatedTodos)); // Update localStorage
+  };
+
   const removeTodo = (id) => {
     const remaindata = todoGstate.filter((item) => item.id !== id);
-    setTodoGstate(remaindata);
+    updateLocalStorage(remaindata); // Update state and localStorage
   };
 
   const counter = (id) => {
@@ -17,7 +23,7 @@ function Todos() {
       }
       return todo;
     });
-    setTodoGstate(updatedTodos);
+    updateLocalStorage(updatedTodos); // Update state and localStorage
   };
 
   const resetCounter = (id) => {
@@ -27,7 +33,7 @@ function Todos() {
       }
       return todo;
     });
-    setTodoGstate(updatedTodos);
+    updateLocalStorage(updatedTodos); // Update state and localStorage
   };
 
   return (
@@ -38,36 +44,36 @@ function Todos() {
       {todoGstate.map((item) => (
         <div className="todo-sub-header" key={item.id}>
           <div className="row">
-            <h2>Id</h2>
+            <h2>Id      /    Reset</h2>
             <h3 onClick={() => resetCounter(item.id)}>{item.id}</h3>
           </div>
-          <div>
+          <div className="row">
             <h2>Title</h2>
             <h3 className="title">{item.title}</h3>
           </div>
-          <div>
+          <div className="row">
             <h2>SubTitle</h2>
             <h3 className="subtitle">{item.subtitle}</h3>
           </div>
-          <div>
+          <div className="row">
             <h2>Start-Time</h2>
             <h3>{new Date(item.startTime).toLocaleString()}</h3>
           </div>
-          <div>
+          <div className="row">
             <h2>End-Time</h2>
             <h3>{new Date(item.endTime).toLocaleString()}</h3>
           </div>
-          <div>
+          <div className="row">
             <h2>Count</h2>
             <h3 className="count" onClick={() => counter(item.id)}>
               {item.count}
             </h3>
           </div>
-          <div>
+          {/* <div className="row"> */}
             <h3 className="delete" onClick={() => removeTodo(item.id)}>
               Delete
             </h3>
-          </div>
+          {/* </div> */}
         </div>
       ))}
     </>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {  useEffect, useState } from "react";
 import TodoContext from "./TodoContext";
 
 const TodoStates = ({ children }) => {
@@ -13,25 +13,15 @@ const TodoStates = ({ children }) => {
     }
   };
 
- // Save data to localStorage
-const setData = () => {
-    if (todoGstate.length > 0) {
-      localStorage.setItem("todos", JSON.stringify(todoGstate)); // Stringify and save only if not empty
-    }
-  };
-  
-  // Save data whenever `todoGstate` changes
-  useEffect(() => {
-    setData();
-  }, [todoGstate]);
-
   // Load data on component mount
   useEffect(() => {
     getData();
   }, []);
 
   return (
-    <TodoContext.Provider value={[todoGstate, setTodoGstate, isdisplay, setIsdisplay]}>
+    <TodoContext.Provider
+      value={[todoGstate, setTodoGstate, isdisplay, setIsdisplay]}
+    >
       {children}
     </TodoContext.Provider>
   );

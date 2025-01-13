@@ -3,6 +3,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./todoAdd.css";
 import TodoContext from "../utils/TodoContext";
+import { updtlclstrg } from "../utils/Func";
 
 function TodoAdd() {
   const [todoGstate] = useContext(TodoContext);
@@ -21,7 +22,16 @@ function TodoAdd() {
       endTime,
     };
     if (todoname) {
+      // setTodoGstate()
       todoGstate.push(newItem);
+      if (todoGstate) {
+        const existingTodos = JSON.parse(localStorage.getItem("todos") || "[]"); // Parse existing todos
+        const updatedTodos = [...existingTodos, newItem]; // Append new item
+        updtlclstrg(updatedTodos, "todos"); // Update localStorage
+      } else {
+        updtlclstrg([newItem], "todos"); // Save new array if empty
+      }
+      
       setTodoname("");
       setsubtitle("");
       setstartTime(null);
