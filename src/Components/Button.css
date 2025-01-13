@@ -7,6 +7,8 @@
     margin-bottom: 20px;
     font-size:26px;
     font-weight: 700;
+    position: sticky;
+    top: 10px;
 }
 .button-container:hover{
     background-color: rgb(150, 191, 204);

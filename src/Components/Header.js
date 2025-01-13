@@ -10,7 +10,7 @@ function Header() {
     <>
     
     <div className='header-container'>
-        <h1>My Todos</h1>
+        <h3>Add Todo</h3>
 
     </div>
     <TodoAdd/>

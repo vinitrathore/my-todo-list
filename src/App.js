@@ -6,6 +6,7 @@ import Header from "./Components/Header";
 // import TodoAdd from "./Components/TodoAdd";
 import Todos from "./Components/Todos";
 import TodoContext from "./utils/TodoContext";
+import Mainheader from "./Components/Mainheader";
 function App() {
   const [, , isdisplay, setIsdisplay] =
     useContext(TodoContext);
@@ -14,6 +15,7 @@ function App() {
   }
   return (
     <div className="app-container">
+      <Mainheader/>
       <Button onclick={onclick}/>
       {isdisplay ? <Header /> : <Todos />}
     </div>
