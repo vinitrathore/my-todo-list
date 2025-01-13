@@ -4,8 +4,8 @@
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-    position: sticky;
-    top: 100px; /* Sticky positioning for the container */
+    /* position: sticky;
+    top: 100px; Sticky positioning for the container */
   }
   
  
