@@ -1,15 +1,16 @@
-.button-container{
-    height: 40px;
-    width: 90px;
-    background-color: lightblue;
-    border-radius: 15px;
-    border: none;
+.btn-container {
+    width: 100%;
+    background-color: antiquewhite;
+    display: flex;
+    align-items: center;
     margin-bottom: 20px;
-    font-size:26px;
-    font-weight: 700;
     position: sticky;
-    top: 10px;
-}
-.button-container:hover{
-    background-color: rgb(150, 191, 204);
-}
+    top: 100px; /* Sticky positioning for the container */
+  }
+  
+ 
+  
+  .button-container:hover {
+    background-color: rgb(150, 191, 204); /* Subtle color change on hover */
+  }
+  

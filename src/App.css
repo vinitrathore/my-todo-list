@@ -18,3 +18,15 @@ body{
   width: 80vw;
   /* background-color: blue; */
 }
+.button-container {
+  height: 40px;
+  width: 90px;
+  background-color: lightblue;
+  border-radius: 15px;
+  border: none;
+  margin-right: 10px; /* Added margin-right for spacing between buttons */
+  font-size: 26px;
+  font-weight: 700;
+  cursor: pointer; /* Add a pointer cursor for better UX */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
